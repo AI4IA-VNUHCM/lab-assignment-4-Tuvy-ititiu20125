@@ -36,7 +36,7 @@ void Ex1(int n)
 				ijF = ijF * k;
 			}
 			int C = iF / (ijF * jF);
-			printf("%2d", C);
+			printf ("%d ",C);
 		}
 		printf("\n");
 	}
