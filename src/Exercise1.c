@@ -16,31 +16,30 @@ ______________________________________
 
 void Ex1(int n)
 {
-	for (int i = 0; i<=n; i++)
+	for (int i = 0; i <= n; i++)
 	{
 		for (int j = 0; j <= i; j++)
 		{
-			int iF=1;
-			for (int k = 1; k<=i; k++)
+			int iF = 1;
+			for (int k = 1; k <= i; k++)
 			{
-				iF=iF*k;
+				iF = iF * k;
 			}
-			int jF=1;
-			for (int k = 1; k<=j; k++)
+			int jF = 1;
+			for (int k = 1; k <= j; k++)
 			{
-				jF=jF*k;
+				jF = jF * k;
 			}
-			int ijF=1;
-			for (int k = 1; k <= i-j; k++)
+			int ijF = 1;
+			for (int k = 1; k <= i - j; k++)
 			{
-				ijF=ijF*k;
+				ijF = ijF * k;
 			}
-			int C = iF/(ijF*jF);
-			printf ("%2d",C);
+			int C = iF / (ijF * jF);
+			printf("%2d", C);
 		}
-		printf ("\n");
+		printf("\n");
 	}
-	
 }
 
 int main(int argc, char *argv[])
