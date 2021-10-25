@@ -56,7 +56,7 @@ void Ex3(int in_arr[], int n)
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr, a, n, n);
 	// Your codes here
-	for (int i = 0; i < n; i++)
+	for (int i=0; i<n;i++)
 	{
 		for (int j = i + 1; j < n; j++)
 		{
