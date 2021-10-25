@@ -28,9 +28,11 @@ void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 {
 	int row, column;
 	int counter = 0;
-	//Convert 1D array to 2D array
-	for (row = 0; row <= (m - 1); row ++){
-		for (column = 0; column <= (n - 1); column ++){
+	// Convert 1D array to 2D array
+	for (row = 0; row <= (m - 1); row++)
+	{
+		for (column = 0; column <= (n - 1); column++)
+		{
 			a[row][column] = arr[counter];
 			counter++;
 		}
@@ -41,33 +43,69 @@ void printArray(int a[SIZE][SIZE], int m, int n)
 {
 	int row, column;
 
-	for (row = 0; row <= (m - 1); row ++){
-		for (column = 0; column <= (n - 1); column ++){
+	for (row = 0; row <= (m - 1); row++)
+	{
+		for (column = 0; column <= (n - 1); column++)
+		{
 			printf("%d ", a[row][column]);
 		}
 		printf("\n");
 	}
 }
 
-void Ex2(int arr[], int m, int n){
+void Ex2(int arr[], int m, int n)
+{
 	int a[SIZE][SIZE];
-	Array2Dconverter(arr,a,m,n);
-	//Your codes here
+	Array2Dconverter(arr, a, m, n);
+
+	for (int col = 0; col < n; col++)
+	{
+		for (int row = 0; row < m; row++)
+		{
+			for (int i = 0; i < m; i++)
+			{
+				for (int j = i + 1; j < m; j++)
+				{
+					if ((col + 1) % 2 != 0)
+					{
+						if (a[i][col] < a[j][col])
+						{
+							int temp = a[i][col];
+							a[i][col] = a[j][col];
+							a[j][col] = temp;
+						}
+					}
+					else
+					{
+						if (a[i][col] > a[j][col])
+						{
+							int temp = a[i][col];
+							a[i][col] = a[j][col];
+							a[j][col] = temp;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	printArray(a, m, n);
 }
 
-int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
+int main(int argc, char *argv[])
+{
+
+	// testing variable, applying it to your algorithm for auto-evaluating
 	int row = atoi(argv[1]);
 	int col = atoi(argv[2]);
-	argc-=3;
-	int testcase[argc],i;
-	for(i=0; i<argc;i++){
-		testcase[i] = atoi(argv[i+3]);
+	argc -= 3;
+	int testcase[argc], i;
+	for (i = 0; i < argc; i++)
+	{
+		testcase[i] = atoi(argv[i + 3]);
 	}
 
 	Ex2(testcase, row, col);
-	
+
 	return 0;
 }
